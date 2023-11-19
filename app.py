@@ -103,6 +103,38 @@ def fetch_forks():
     # Return the image as a response
     return send_file(image_path, mimetype='image/png')
 
+@app.route('/fetch/stars')
+def fetch_stars():
+    # Specify the path to your image file
+    image_path = 'images/stars.png'
+
+    # Return the image as a response
+    return send_file(image_path, mimetype='image/png')
+
+@app.route('/fetch/issuesline')
+def fetch_issuesline():
+    # Specify the path to your image file
+    image_path = 'images/issues_line_chart.png'
+
+    # Return the image as a response
+    return send_file(image_path, mimetype='image/png')
+
+@app.route('/fetch/issues/created/month=<int:month>')
+def fetch_issues_created(month):
+    # Specify the path to your image file
+    image_path = f'images/issue_created_month{month}.png'
+
+    # Return the image as a response
+    return send_file(image_path, mimetype='image/png')
+
+@app.route('/fetch/issues/closed/week=<int:week>')
+def fetch_issues_closed(week):
+    # Specify the path to your image file
+    image_path = f'images/issue_closed_week{week}.png'
+
+    # Return the image as a response
+    return send_file(image_path, mimetype='image/png')
+
 @app.route('/importissues')
 def import_issues():
     main_data = {}
