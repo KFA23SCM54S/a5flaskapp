@@ -135,6 +135,14 @@ def fetch_issues_closed(week):
     # Return the image as a response
     return send_file(image_path, mimetype='image/png')
 
+@app.route('/fetch/issues/stacked')
+def fetch_issues_stacked():
+    # Specify the path to your image file
+    image_path = f'images/issues_stack_bar_chart.png'
+
+    # Return the image as a response
+    return send_file(image_path, mimetype='image/png')
+
 @app.route('/importissues')
 def import_issues():
     main_data = {}
